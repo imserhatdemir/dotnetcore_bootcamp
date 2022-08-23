@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+@await Html.PartialAsync("UserPartial/HeadPartial")
+
+<body>
+    <!--Header-->
+
+    @await Html.PartialAsync("UserPartial/HeaderPartial") 
+    <!--//header-->
+    <!--/banner-->
+    <!--//banner-->
+    <!--/main-->
+    @RenderBody()
+    <!--//main-->
+    <!--footer-->
+    @await Html.PartialAsync("UserPartial/FooterPartial")
+    <!---->
+    <!-- js -->
+   @await Html.PartialAsync("UserPartial/ScriptPartial")
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>İşlemler</th>
+    </tr>
+    <tr>
+        @if (Model.Count < 1)
+        {
+
+
+<div class="alert alert-danger">
+            <p>KATEGORİ BULUNMUYOR</p>
+        </div>
+        }
+        else
+        {
+        @foreach (var item in Model)
+        {
+        <td>@item.CategoryID</td>
+        <td>@item.CategoryName</td>
+        <td><a href="" class="btn btn-danger">SİL</a>
+        <a href="" class="btn btn-success">Güncelle</a>
+        <a href="" class="btn btn-info">Detay</a>
+        
+        </td>
+        }}
+    </tr>
+</table>
+

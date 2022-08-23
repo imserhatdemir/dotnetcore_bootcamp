@@ -1,0 +1,32 @@
+﻿@*@using EntityLayer.Concrete
+@model List<Comment>
+<div class="comment-top">
+    <h4>Yorumlar</h4>
+    <div class="media">
+        @if (Model.Count < 1)
+        {
+
+
+            <div class="alert alert-danger">
+                <p>Bu blog yazısında henüz yorum yapılmamıştır</p>
+            </div>
+        }
+        else
+        {@foreach (var item in Model)
+            {
+                <img src="/web/images/t1.jpg" alt="" class="img-fluid" />
+                <div class="media-body">
+                    <h5 class="mt-0">@item.Username</h5>
+                    <p>
+                        @item.Content
+                    </p>
+                </div>
+            }}
+
+    </div>
+</div>*@
+@model IEnumerable<Core_Bootcamp.Models.UserComment>
+@foreach(var item in Model){
+                <p>@item.ID</p>
+                <p>@item.UserName</p>
+            }
