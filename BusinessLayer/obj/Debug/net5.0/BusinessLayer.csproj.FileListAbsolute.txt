@@ -1,4 +1,6 @@
 C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\bin\Debug\net5.0\BusinessLayer.deps.json
+C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\bin\Debug\net5.0\BusinessLayer.runtimeconfig.json
+C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\bin\Debug\net5.0\BusinessLayer.runtimeconfig.dev.json
 C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\bin\Debug\net5.0\BusinessLayer.dll
 C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\bin\Debug\net5.0\ref\BusinessLayer.dll
 C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\bin\Debug\net5.0\BusinessLayer.pdb
@@ -15,6 +17,4 @@ C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\obj\Debug\net5.0\BusinessLa
 C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\obj\Debug\net5.0\BusinessLayer.dll
 C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\obj\Debug\net5.0\ref\BusinessLayer.dll
 C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\obj\Debug\net5.0\BusinessLayer.pdb
-C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\bin\Debug\net5.0\BusinessLayer.runtimeconfig.json
-C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\bin\Debug\net5.0\BusinessLayer.runtimeconfig.dev.json
 C:\Users\Serhat Demir\Desktop\Bootcamp\BusinessLayer\obj\Debug\net5.0\BusinessLayer.genruntimeconfig.cache

@@ -1,0 +1,29 @@
+﻿<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<div class="tech-btm">
+    <h4>Abone Ol</h4>
+    <p>Gelişmelerden haberdar olmak için bize abone olabilirsiniz..</p>
+    <form method="post">
+        <input type="email" id="TxtMail" required="" name="Mail">
+        <input type="submit" value="Subscribe" id="btn">
+    </form>
+
+</div>
+<script>
+    
+        $("#btn").click(function () {
+            let values = {
+                Mail: $("#TxtMail").val()
+            };
+            $.ajax({
+                type: "post",
+                url: "/NewsLetter/Subscribe/",
+                data: values,
+                success: function (func) {
+                    let result = jQuery.parseJSON(func);
+                }
+            });
+
+        });
+
+    
+</script>

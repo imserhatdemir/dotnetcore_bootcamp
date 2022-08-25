@@ -48,9 +48,21 @@ namespace BusinessLayer.Concrete
             return _blogDAL.GetList();
         }
 
+
+        public List<Blog> GetLast3Blog()
+        {
+            return _blogDAL.GetList().Take(3).ToList();
+        }
+
         public void UpdateBlog(Blog blog)
         {
             throw new NotImplementedException();
         }
+
+        public List<Blog> GetBlogListByWriter(int id)
+        {
+            return _blogDAL.GetListAll(x => x.WriterID == id);
+        }
+
     }
 }
