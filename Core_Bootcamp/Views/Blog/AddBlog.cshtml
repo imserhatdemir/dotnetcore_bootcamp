@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "AddBlog";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Blog Ekle</h4>
+            <p class="card-description"> Blog Oluştur</p>
+            @using (Html.BeginForm("AddBlog", "Blog", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label for="exampleInputName1">Başlık</label>
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Title)
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputCity1">Kategori</label>
+                    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.cv, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>File upload</label>
+                    @*<input type="file" name="img[]" class="file-upload-default">
+                <div class="input-group col-xs-12">
+                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                    <span class="input-group-append">
+                        <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                    </span>
+                </div>*@
+                    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Image)
+                </div>
+                <div class="form-group">
+                    <label>Küçük Resim</label>
+                    @Html.TextBoxFor(x => x.ThumbnailImage, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">İçerik</label>
+                    @Html.TextAreaFor(x => x.Content, 10, 10, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Content)
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+            }
+        </div>
+    </div>
+</div>
+

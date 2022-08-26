@@ -14,5 +14,21 @@ namespace Core_Bootcamp.Controllers
         {
             return View();
         }
+
+        [AllowAnonymous]
+        public IActionResult Test()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public PartialViewResult WriterNavbar()
+        {
+            return PartialView();
+        }
+        [AllowAnonymous]
+        public PartialViewResult WriterFooter()
+        {
+            return PartialView();
+        }
     }
 }
