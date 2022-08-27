@@ -13,6 +13,7 @@ namespace DataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder OptionsBuilder)
         {
             OptionsBuilder.UseSqlServer("server=DESKTOP-1FS4KAI\\SQLEXPRESS;database=BootcampDB;integrated security=true;");
+            
         }
 
         public DbSet<About> abouts { get; set; }
@@ -22,5 +23,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Contact> contacts { get; set; }
         public DbSet<Writer> writers { get; set; }
         public DbSet<NewsLetter> newsLetters { get; set; }
+        
     }
 }

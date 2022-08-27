@@ -4,6 +4,7 @@ C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\bin\Debug\net5.0\EntityLayer.
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\bin\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.AssemblyReference.cache
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfoInputs.cache
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfo.cs
@@ -12,4 +13,3 @@ C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\EntityLayer.
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
 C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\EntityLayer.genruntimeconfig.cache
-C:\Users\Serhat Demir\Desktop\Bootcamp\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.AssemblyReference.cache
