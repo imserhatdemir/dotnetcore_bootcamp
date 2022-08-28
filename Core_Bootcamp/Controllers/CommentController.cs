@@ -28,7 +28,7 @@ namespace Core_Bootcamp.Controllers
             //ViewBag.id = p.BlogID;
             p.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             p.CommentStatus = true;
-            p.BlogID = 1;
+            p.BlogID= 1;
             cm.AddComment(p);
             return PartialView();
         }

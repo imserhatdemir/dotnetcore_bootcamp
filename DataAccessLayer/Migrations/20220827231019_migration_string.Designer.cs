@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220827000000_lastmig123321")]
-    partial class lastmig123321
+    [Migration("20220827231019_migration_string")]
+    partial class migration_string
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,15 +114,12 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
                 {
-                    b.Property<int>("CommentID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("BlogID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BlogScore")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CommentDate")
@@ -134,13 +131,16 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PointScore")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CommentID");
+                    b.HasKey("ID");
 
                     b.HasIndex("BlogID");
 

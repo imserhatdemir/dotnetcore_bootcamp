@@ -15,20 +15,32 @@
                                 <th> Create Date </th>
                             </tr>
                         </thead>
+
                         <tbody>
-                            @foreach (var item in Model)
+                            @if (Model.Count < 1)
                             {
-                            <tr>
-                                <td>
-                                    <img src="@item.Image" class="mr-2" alt="image">
-                                </td>
-                                <td> @item.Title</td>
-                                <td>
-                                    <label class="badge badge-gradient-success">@item.Category.CategoryName</label>
-                                </td>
-                                <td>@(((DateTime)item.CreateDate).ToString("dd-MMM-yyy"))</td>
-                                
-                            </tr>
+
+
+                                <div class="alert alert-danger">
+                                    <p>Blog Bulunmamaktadır</p>
+                                </div>
+                            }
+                            else
+                            {
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="@item.Image" class="mr-2" alt="image">
+                                        </td>
+                                        <td> @item.Title</td>
+                                        <td>
+                                            <label class="badge badge-gradient-success">@item.Category.CategoryName</label>
+                                        </td>
+                                        <td>@(((DateTime)item.CreateDate).ToString("dd-MMM-yyy"))</td>
+
+                                    </tr>
+                                }
                             }
                         </tbody>
                     </table>

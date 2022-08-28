@@ -10,14 +10,14 @@ namespace EntityLayer.Concrete
     public class Comment
     {
         [Key]
-        public int ID { get; set; }
+        public int CommentID { get; set; }
         public string Username { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime CommentDate { get; set; }
-        public int PointScore { get;set; }
         public bool CommentStatus { get; set; }
         public int BlogID { get; set; }
         public Blog Blog { get; set; }
+        public int PointScore { get; set; }
     }
 }

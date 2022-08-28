@@ -2,30 +2,30 @@
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class removemig : Migration
+    public partial class stringtoint_migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<int>(
-                name: "CommentID",
+                name: "PointScore",
                 table: "comments",
                 type: "int",
                 nullable: false,
-                oldClrType: typeof(int),
-                oldType: "int")
-                .Annotation("SqlServer:Identity", "1, 1");
+                defaultValue: 0,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<int>(
-                name: "CommentID",
+            migrationBuilder.AlterColumn<string>(
+                name: "PointScore",
                 table: "comments",
-                type: "int",
-                nullable: false,
+                type: "nvarchar(max)",
+                nullable: true,
                 oldClrType: typeof(int),
-                oldType: "int")
-                .OldAnnotation("SqlServer:Identity", "1, 1");
+                oldType: "int");
         }
     }
 }

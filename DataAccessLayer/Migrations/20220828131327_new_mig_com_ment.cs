@@ -2,22 +2,22 @@
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class mig_add_score_column : Migration
+    public partial class new_mig_com_ment : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "Score",
+                name: "ID",
                 table: "comments",
-                newName: "BlogScore");
+                newName: "CommentID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "BlogScore",
+                name: "CommentID",
                 table: "comments",
-                newName: "Score");
+                newName: "ID");
         }
     }
 }

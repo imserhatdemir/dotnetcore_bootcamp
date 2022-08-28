@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220826233958_mig_add_score_column")]
-    partial class mig_add_score_column
+    [Migration("20220827225952_rename_comment")]
+    partial class rename_comment
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -120,9 +120,6 @@ namespace DataAccessLayer.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("BlogID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BlogScore")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CommentDate")
