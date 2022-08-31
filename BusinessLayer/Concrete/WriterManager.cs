@@ -11,16 +11,41 @@ namespace BusinessLayer.Concrete
 {
     public class WriterManager : IWriterService
     {
-        IWriterDAL writerDAL;
+        IWriterDAL _writerDAL;
 
         public WriterManager(IWriterDAL writerDAL)
         {
-            this.writerDAL = writerDAL;
+            this._writerDAL = writerDAL;
         }
 
-        public void AddWriter(Writer writer)
+        public List<Writer> GetAboutByWriter(int id)
         {
-            writerDAL.Insert(writer);
+            return _writerDAL.GetListAll(x => x.WriterID == id); 
+        }
+
+        public Writer GetByID(int id)
+        {
+           return _writerDAL.GetByID(id);
+        }
+
+        public List<Writer> GetList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TAdd(Writer t)
+        {
+            _writerDAL.Insert(t);
+        }
+
+        public void TDelete(Writer t)
+        {
+            _writerDAL.Delete(t);
+        }
+
+        public void TUpdate(Writer t)
+        {
+            _writerDAL.Update(t);
         }
     }
 }

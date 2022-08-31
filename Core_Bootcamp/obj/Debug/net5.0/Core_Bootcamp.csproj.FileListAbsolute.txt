@@ -188,3 +188,9 @@ C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Core_Bootc
 C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\ref\Core_Bootcamp.dll
 C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Core_Bootcamp.pdb
 C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Core_Bootcamp.genruntimeconfig.cache
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterAbountOnDashboard\Default.cshtml.g.cs
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\Writer\WriterEditProfile.cshtml.g.cs
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\Writer\AddWriter.cshtml.g.cs
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\Notification\AllNotifications.cshtml.g.cs
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\Message\IndBox.cshtml.g.cs
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\Message\MessageDetails.cshtml.g.cs

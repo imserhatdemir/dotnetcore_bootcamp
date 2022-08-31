@@ -1,0 +1,46 @@
+﻿@model Core_Bootcamp.Models.AddProfileImage
+@{
+    ViewData["Title"] = "AddWriter";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>AddWriter</h1>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Profil</h4>
+            <form class="form-group" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputName1">Ad</label>
+                    @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Soyad</label>
+                    @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">E-Mail</label>
+                    @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Password</label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>File upload</label>
+                    <input type="file" name="Image" class="file-upload">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Textarea</label>
+                    @Html.TextAreaFor(x => x.WriterAbout, 10, 3, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+
+
+
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -31,7 +31,7 @@ namespace Core_Bootcamp.Controllers
             {
                 p.WriterStatus = true;
                 p.WriterAbout = "Hoşgeldiniz";
-                wm.AddWriter(p);
+                wm.TAdd(p);
                 return RedirectToAction("Index", "Blog");
             }
             else

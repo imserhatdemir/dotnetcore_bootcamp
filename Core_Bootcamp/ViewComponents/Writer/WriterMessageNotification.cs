@@ -10,10 +10,12 @@ namespace Core_Bootcamp.ViewComponents.Writer
 {
     public class WriterMessageNotification : ViewComponent
     {
-        WriterManager wm = new WriterManager(new EFWriterRepository());
+        Message2Manager wm = new Message2Manager(new EFMessage2Repository());
         public IViewComponentResult Invoke()
         {
-            return View();
+            int id = 2;
+            var values = wm.GetInboxListByWriter(id);
+            return View(values);
         }
     }
 }

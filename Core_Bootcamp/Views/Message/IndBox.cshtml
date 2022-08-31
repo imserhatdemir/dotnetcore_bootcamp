@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model List<Message2>
+@{
+    ViewData["Title"] = "IndBox";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>IndBox</h1>
+<a href="#" class="btn btn-primary">+ Yeni Mesaj</a>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Tarih</th>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th>İŞLEMLER</th>
+    </tr>
+    @if (Model.Count < 1)
+    {
+
+
+        <div class="alert alert-danger">
+            <p>Henüz Mesajınız bulunmamaktadır</p>
+        </div>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MessageID</td>
+                <td>@item.Subject</td>
+                <td>@(((DateTime)item.MessageDate).ToString("dd-MMM-yyy"))</td>
+                <td>@item.SenderUser.WriterName</td>
+                <td>@item.MessageStatus</td>
+                <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-info">DETAY</a> || <a href="/Message/DeleteMessage/@item.MessageID" onclick="return confirm('Silmek istediğine emin misin?');" class="btn btn-danger">SİL</a></td>
+            </tr>
+        }
+    }
+</table>
