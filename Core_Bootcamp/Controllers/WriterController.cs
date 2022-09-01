@@ -18,7 +18,6 @@ namespace Core_Bootcamp.Controllers
     public class WriterController : Controller
     {
         WriterManager wm = new WriterManager(new EFWriterRepository());
-        [Authorize]
         public IActionResult Index()
         {
             var usermail = User.Identity.Name;
@@ -45,14 +44,17 @@ namespace Core_Bootcamp.Controllers
             return PartialView();
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public IActionResult WriterEditProfile()
         {
-            var writervalues = wm.GetByID(1);
+            Context c = new Context();
+            var usermail = User.Identity.Name;
+            var writerID = c.writers.Where(x => x.WriterMail == usermail).Select(y => y.WriterID).FirstOrDefault();
+            var value = wm.GetAboutByWriter(writerID);
+            var writervalues = wm.GetByID(writerID);
             return View(writervalues);
         }
-        [AllowAnonymous]
+
         [HttpPost]
         public IActionResult WriterEditProfile(Writer p)
         {
