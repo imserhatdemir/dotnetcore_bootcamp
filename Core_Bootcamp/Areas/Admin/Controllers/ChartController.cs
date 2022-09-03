@@ -1,0 +1,45 @@
+﻿using Core_Bootcamp.Areas.Admin.Models;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Core_Bootcamp.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class ChartController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
+        public IActionResult CategoryChart()
+        {
+            List<CategoryClass> list = new List<CategoryClass>();
+            list.Add(new CategoryClass
+            {
+                categoryname = "Teknoloji",
+                categorycount = 10
+            });
+            list.Add(new CategoryClass
+            {
+                categoryname = "Seyehat",
+                categorycount = 5
+            });
+            list.Add(new CategoryClass
+            {
+                categoryname = "Hava Durumu",
+                categorycount = 20
+            });
+            list.Add(new CategoryClass
+            {
+                categoryname = "Kitap",
+                categorycount = 15
+            });
+            return Json(new { jsonlist = list });
+        }
+    }
+}

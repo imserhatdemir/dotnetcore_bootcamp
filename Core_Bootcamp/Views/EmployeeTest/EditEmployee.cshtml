@@ -1,0 +1,16 @@
+﻿@model Core_Bootcamp.Controllers.Class1
+@{
+    ViewData["Title"] = "EditEmployee";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>EditEmployee</h1>
+<form method="post">
+    <label>#</label>
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control" })
+    <br />
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>

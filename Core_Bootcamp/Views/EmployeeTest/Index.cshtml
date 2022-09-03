@@ -1,0 +1,25 @@
+﻿@using Core_Bootcamp.Controllers
+@model  List<Class1>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<table class="table table-bordered">
+    <a href="/EmployeeTest/AddEmployee" class="btn btn-success">+ YENİ KİŞİ EKLE</a>
+    <tr>
+        <th>#</th>
+        <th>ad</th>
+        <th>işlemler</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.name</td>
+                    <td><a href="/EmployeeTest/EditEmployee/@item.id" class="btn btn-info">Güncelle</a> || <a href="/EmployeeTest/DeleteEmployee/@item.id" class="btn btn-danger">Sil</a></td>
+                </tr>
+            }
+</table>
