@@ -229,3 +229,9 @@ C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\bin\Debug\net5.0\BlogAPIdem
 C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\EmployeeTest\Index.cshtml.g.cs
 C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\EmployeeTest\AddEmployee.cshtml.g.cs
 C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\EmployeeTest\EditEmployee.cshtml.g.cs
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Serhat Demir\Desktop\Bootcamp\Core_Bootcamp\obj\Debug\net5.0\Razor\Views\RegisterUser\Index.cshtml.g.cs

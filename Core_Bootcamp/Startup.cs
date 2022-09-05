@@ -1,3 +1,5 @@
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -26,6 +28,16 @@ namespace Core_Bootcamp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Context>();
+            services.AddIdentity<AppUser, AppRole>(
+                x =>
+                {
+                    x.Password.RequireUppercase = false;
+                    x.Password.RequireNonAlphanumeric = false;
+                }
+
+                ).AddEntityFrameworkStores<Context>();
+
             services.AddControllersWithViews();
 
             services.AddSession();
@@ -60,20 +72,20 @@ namespace Core_Bootcamp
                 app.UseHsts();
             }
 
-            app.UseStatusCodePagesWithReExecute("/Errorpage/Error1","?code={0}");
+            app.UseStatusCodePagesWithReExecute("/Errorpage/Error1", "?code={0}");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseSession();
-            
+
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                
+
                 endpoints.MapControllerRoute(
                   name: "areas",
                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
@@ -82,7 +94,7 @@ namespace Core_Bootcamp
                     name: "default",
                     pattern: "{controller=Blog}/{action=Index}/{id?}");
             });
-      
+
 
         }
     }
