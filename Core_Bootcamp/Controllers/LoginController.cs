@@ -1,8 +1,10 @@
-﻿using DataAccessLayer.Concrete;
+﻿using Core_Bootcamp.Models;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,43 +17,35 @@ namespace Core_Bootcamp.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
+        private readonly SignInManager<AppUser> _signInManager;
+
+        public LoginController(SignInManager<AppUser> signInManager)
+        {
+            _signInManager = signInManager;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Index(Writer writer)
+        public async Task<IActionResult> Index(UserSignInViewModel p)
         {
-            Context c = new Context();
-            var datavalue = c.writers.FirstOrDefault(x => x.WriterMail == writer.WriterMail && x.Password == writer.Password);
-            if (datavalue != null)
+            if (ModelState.IsValid)
             {
-                var claims = new List<Claim>
+                var result = await _signInManager.PasswordSignInAsync(p.username, p.password, false, true);
+                if (result.Succeeded)
                 {
-                    new Claim(ClaimTypes.Name,writer.WriterMail)
-                };
-                var useridentity = new ClaimsIdentity(claims,"a");
-                ClaimsPrincipal principal = new ClaimsPrincipal(useridentity);
-                await HttpContext.SignInAsync(principal);
-                return RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "Dashboard");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Login");
+                }
             }
-            else
-            {
-                return View();
-            }
-           
+            return View();
         }
+      
     }
 }
-//Context c = new Context();
-//var datavalue = c.writers.FirstOrDefault(x => x.WriterMail == writer.WriterMail && x.Password == writer.Password);
-//if (datavalue != null)
-//{
-//    HttpContext.Session.SetString("username", writer.WriterMail);
-//    return RedirectToAction("Index", "Writer");
-//}
-//else
-//{
-//    return View();
-//}

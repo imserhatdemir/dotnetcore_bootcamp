@@ -2,10 +2,12 @@
 using BusinessLayer.ValidationRules;
 using Core_Bootcamp.Models;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,14 @@ namespace Core_Bootcamp.Controllers
     public class WriterController : Controller
     {
         WriterManager wm = new WriterManager(new EFWriterRepository());
+
+        private readonly UserManager<AppUser> _userManager;
+
+        public WriterController(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+        }
+
         public IActionResult Index()
         {
             var usermail = User.Identity.Name;
@@ -48,11 +58,16 @@ namespace Core_Bootcamp.Controllers
         public IActionResult WriterEditProfile()
         {
             Context c = new Context();
-            var usermail = User.Identity.Name;
-            var writerID = c.writers.Where(x => x.WriterMail == usermail).Select(y => y.WriterID).FirstOrDefault();
-            var value = wm.GetAboutByWriter(writerID);
-            var writervalues = wm.GetByID(writerID);
-            return View(writervalues);
+            var username = User.Identity.Name;
+            var usermail = c.Users.Where(x => x.UserName == username).Select(y => y.Email).FirstOrDefault();
+            UserManager userManager = new UserManager(new EFUserRepository());
+            //var writerID = c.writers.Where(x => x.WriterMail == usermail).Select(y => y.WriterID).FirstOrDefault();
+            //var value = wm.GetAboutByWriter(writerID);
+            //var writervalues = wm.GetByID(writerID);
+            //return View(writervalues);
+            var id = c.Users.Where(x => x.Email == usermail).Select(y => y.Id).FirstOrDefault();
+            var values = userManager.GetByID(id);
+            return View(values);
         }
 
         [HttpPost]

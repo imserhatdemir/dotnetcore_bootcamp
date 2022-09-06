@@ -16,10 +16,11 @@ namespace Core_Bootcamp.Controllers
         public IActionResult Index()
         {
             Context c = new Context();
-            var usermail = User.Identity.Name;
-            var writerID = c.writers.Where(x => x.WriterMail == usermail).Select(y => y.WriterID).FirstOrDefault();
+            var username = User.Identity.Name;
+            var usermail = c.Users.Where(x => x.UserName == username).Select(y => y.Email).FirstOrDefault();
+            var writerid = c.writers.Where(x => x.WriterMail == usermail).Select(y => y.WriterID).FirstOrDefault();
             ViewBag.V1 = c.blogs.Count().ToString();
-            ViewBag.V2 = c.blogs.Where(x => x.WriterID == writerID).Count().ToString();
+            ViewBag.V2 = c.blogs.Where(x => x.WriterID == writerid).Count().ToString();
             ViewBag.V3 = c.categories.Count().ToString();
             return View();
         }
